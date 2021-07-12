@@ -225,7 +225,7 @@ if branch == "FFI" or branch == "LJ" or branch == "LIB32" then
 			up = true;
 			n =- n;
 		end
-		x = b.band(x, 16^n-1)
+		x = AND(x, 16^n-1)
 		return ('%0'..n..(up and 'X' or 'x')):format(x);
 	end;              -- returns string of 8 lowercase hexadecimal digits
 	assert(AND and OR and XOR and SHL and SHR and ROL and ROR and NOT, "Library '"..library_name.."' is incomplete")
