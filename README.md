@@ -11,7 +11,7 @@ Just copy `sha2.lua` to Lua modules' folder.
 ### Description
 
 This module provides functions to calculate SHA digest.  
-This is a pure-Lua module, compatible with **Lua 5.1**, **Lua 5.2**, **Lua 5.3**, **Lua 5.4.0** (alpha), **LuaJIT 2.0/2.1** and **Fengari**.
+This is a pure-Lua module, compatible with **Lua 5.1**, **Lua 5.2**, **Lua 5.3**, **Lua 5.4.0** (alpha), **LuaU**, **LuaJIT 2.0/2.1** and **Fengari**.
 
 Main feature of this module: it was heavily optimized for speed.  
 For every Lua version the module contains particular implementation branch to get benefits from version-specific features.
@@ -64,6 +64,7 @@ This module has best performance on every Lua version because it contains severa
    - branch for **Lua 5.2** (using **bit32** library), suitable also for **Lua 5.1** with external **bit** library
    - branch for **Lua 5.3 / 5.4** (using native **64**-bit bitwise operators)
    - branch for **Lua 5.3 / 5.4** (using native **32**-bit bitwise operators) for Lua built with `LUA_INT_TYPE=LUA_INT_INT`
+   - branch for **LuaU** (using **bit32** library like **Lua 5.2**) but with `tohex` and `tobit` functions implemented 
    - branch for **LuaJIT without FFI library** (if you're working in a sandboxed environment with FFI disabled)
    - branch for **LuaJIT x86 without FFI library** (LuaJIT x86 has oddity because of lack of x86 CPU registers)
    - branch for **LuaJIT 2.0 with FFI library** (`bit.*` functions work only with 32-bit values)
